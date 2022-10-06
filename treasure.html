@@ -12,21 +12,21 @@
   <style>
     .flex-container {
       display: flex;  flex-direction:row;
-      background-color:aquamarine;
+      background-color:sandybrown
   }
 
 .flex-container > div {  /*div children of the flex container*/
-  background-color: #f1f1f1; 
+  background-color:burlywood;
   margin: 10px;  padding: 20px;  font-size: 30px;
 }
 body {
-  background-color: teal
+  background-color: aquamarine;
 }
 
 /* Responsive layout */
 @media (max-width: 600px) { 
 	 .flex-container{
-		 flex-direction:column;
+		 flex-direction:row;
 		 background-color: green;
 	  }
 	}
@@ -37,12 +37,57 @@ body {
   <h2>Treasure Hunt!</h2>
 
   <div>Click on the chests to check for treasure </div>
+  <div id="chests">Number of chests checked: </div>    
+  <div id="Score">Score is: Unknown</div>
+  <div id="help">Help Report</div>  
 
-  <div class="flex-container">
+
+<div class="flex-container">
+  <div class="flex-row">
+    <div id="1"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="2"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="3"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="4"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="5"><img src="Chest.png" height="50px" width="50px"></div>
+  </div>
+  <div class="flex-row">
+    <div id="6"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="7"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="8"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="9"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="10"><img src="Chest.png" height="50px" width="50px"></div>
+  </div>
+  <div class="flex-row">
+    <div id="11"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="12"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="13"><img src="Help.png" height="50px" width="50px"></div>
+    <div id="14"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="15"><img src="Chest.png" height="50px" width="50px"></div>
+  </div>
+  <div class="flex-row">
+    <div id="16"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="17"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="18"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="19"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="20"><img src="Chest.png" height="50px" width="50px"></div>
+  </div>
+  <div class="flex-row">
+    <div id="21"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="22"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="23"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="24"><img src="Chest.png" height="50px" width="50px"></div>
+    <div id="25"><img src="Chest.png" height="50px" width="50px"></div>
+  </div>
+</div>
+
+
+
+
+  <!-- <div class="flex-container">
     <div id="chests">Number of chests checked: </div>    
     <div id="Score">Score is: Unknown</div>
     <div id="help">Help Report</div>  
-  </div>
+  </div> -->
 
 
 
