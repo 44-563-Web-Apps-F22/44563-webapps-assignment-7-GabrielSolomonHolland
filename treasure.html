@@ -38,7 +38,7 @@ body {
 
   <div>Click on the chests to check for treasure </div>
   <div id="chests">Number of chests checked: </div>    
-  <div id="Score">Score is: Unknown</div>
+  <div id="score">Score: </div>
   <div id="help">Help Report</div>  
 
 
@@ -79,6 +79,47 @@ body {
     <div id="25"><img src="Chest.png" height="50px" width="50px" onclick = "check(25)"></div>
   </div>
 </div>
+
+<script>
+var ids = ["1","2","3","4","5","6","7","8","9","10","11","12","help","14","15","16","17","18","19","20","21","22","23","24","25"]
+var chestCount = 0
+var score = 0
+var lastCheck = 12
+var treasureLocation = 18
+var chestsOut = document.getElementById("chests")
+var scoreOut = document.getElementById("score")
+
+function check(position)
+{
+  var id = ids[position-1]
+  console.log("got id, our id is: " + id)
+
+  var image = document.getElementById(id)
+  
+  var treasSpot = ids[treasureLocation-1]
+  console.log("got treasure location, its at " + treasSpot)
+
+  if(id==treasSpot)
+  {
+    image.src="treasure.png"
+    console.log("set to treasure")
+  }
+  else
+  {
+    image.setAttribute("src","noTreasure.PNG")
+    console.log("set to no treasure")
+  }
+  chestCount++
+  score++
+  lastCheck = id
+
+  chestsOut.innerHTML="Number of Chests Checked: " + chestCount
+  scoreOut.innerHTML="Score: " + score
+}
+
+
+
+</script>
 
 
 
