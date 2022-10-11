@@ -189,7 +189,7 @@ function reset()
   scoreOut.innerHTML = "Score: " + score
 
   chestCount = 0
-  chestsOut = "Number of Chests Checked: " + chestCount
+  chestsOut.innerHTML = "Number of Chests Checked: " + chestCount
 
   lastCheck = 13
   treasureLocation = Math.floor(Math.random()*25)+1 //*25 means 0-24, +1 makes sure we can't get 0th index
@@ -218,8 +218,6 @@ function reset()
       img.src="chest.PNG"
     }
   }
-
-
 }
 </script>
 
