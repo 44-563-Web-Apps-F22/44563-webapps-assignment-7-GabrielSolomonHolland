@@ -27,14 +27,16 @@
 	<h2>Gabriel SH Builds A Cycler</h2>
 		<div class="flex-container" id="target">
 		  <div class="cycler">row item 1</div>   
-		  <div>row item 2</div>  
-		  <div>row item 3</div>  
+		  <div class="cycler">row item 2</div>  
+		  <div class="cycler">row item 3</div>  
 		</div>
 	
 	<p> Press the button to create an new element of type div and then add it to the container.</p>
 	<label for="input">Add value:</label>
 	<input type="text" id="input">
 	<button onclick="makeNewDiv()">Add one</button>
+	<button onclick="get()">Get</button>
+	<button onclick="spin()">Spin</button>
 	
 
 	<div><a href="treasure.html">Treasure</a></div>
@@ -44,19 +46,43 @@
 	
 </body>
 <script>
-		let valueIn = document.getElementById("input")
+	let valueIn = document.getElementById("input")
 	function makeNewDiv(){
 		/* make the div and its text */
 		let element = document.createElement("div")
 		let data = valueIn.value
 		element.innerHTML = data
 		element.style.color = "orange"
-		element.class="cycler"
+		element.className="cycler"
 
 		/* add it to the container */
 		let container = document.getElementById('target')
 		container.appendChild(element)
-		
+	}
+
+	function get()
+	{
+		let cyclerItems = document.getElementsByClassName("cycler")
+
+		if (cyclerItems.length > 0) 
+		{
+			cyclerItems[cyclerItems.length - 1].remove()
+		}
+	}
+
+	function spin()
+	{
+		let cyclerItems=document.getElementsByClassName("cycler")
+		if(cyclerItems.length>1)
+		{
+			let removedItem=cyclerItems[cyclerItems.length - 1]
+			cyclerItems[cyclerItems.length-1].remove()
+
+			let container = document.getElementById('target')
+			container.insertBefore(removedItem,container.firstChild)
+		}
+
+
 	}
 </script>
 </html>	
