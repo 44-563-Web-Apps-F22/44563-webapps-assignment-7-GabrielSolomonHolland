@@ -85,7 +85,24 @@ var ids = ["1","2","3","4","5","6","7","8","9","10","11","12","help","14","15","
 var chestCount = 0
 var score = 0
 var lastCheck = 12
-var treasureLocation = 18
+
+//Bonus -- randomly place treasure
+var treasureLocation = Math.floor(Math.random()*25)
+
+//ensure it is not on the help square
+while(true)
+{
+  if(treasureLocation == 13)
+  {
+  treasureLocation = Math.floor(Math.random()*25)
+  }
+  else
+  {
+    console.log("Treasure location: " + treasureLocation)
+    break
+  }
+}
+
 var chestsOut = document.getElementById("chests")
 var scoreOut = document.getElementById("score")
 var helpOut = document.getElementById("help")
