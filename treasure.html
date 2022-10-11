@@ -129,8 +129,8 @@ function help()
   colTreas = Math.ceil(treasureLocation/5)
 
 
-  //The modulus for even numbers return 
-  if(rowCheck = 0)
+  //The modulus for the last row will return 0, but it is the bottom row so this little logic takes care of that
+  if(rowCheck == 0)
   {
     rowCheck = 5
   }
