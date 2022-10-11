@@ -88,6 +88,7 @@ var lastCheck = 12
 var treasureLocation = 18
 var chestsOut = document.getElementById("chests")
 var scoreOut = document.getElementById("score")
+var helpOut = document.getElementById("help")
 
 function check(position)
 {
@@ -97,17 +98,17 @@ function check(position)
   var image = document.getElementById(id)
   
   var treasSpot = ids[treasureLocation-1]
-  console.log("got treasure location, its at " + treasSpot)
+  //console.log("got treasure location, its at " + treasSpot)
 
   if(id==treasSpot)
   {
     image.src="treasure.png"
-    console.log("set to treasure")
+    //console.log("set to treasure")
   }
   else
   {
-    image.setAttribute("src","noTreasure.PNG")
-    console.log("set to no treasure")
+    image.src="noTreasure.PNG"
+    //console.log("set to no treasure")
   }
   chestCount++
   score++
@@ -117,8 +118,51 @@ function check(position)
   scoreOut.innerHTML="Score: " + score
 }
 
+function help()
+{
+  rowCheck = lastCheck%5
+  colCheck = Math.ceil(lastCheck/5)
+
+  console.log("Row checked: " + rowCheck + ", Col checked: " + colCheck)
+
+  rowTreas = treasureLocation%5
+  colTreas = Math.ceil(treasureLocation/5)
 
 
+  //The modulus for even numbers return 
+  if(rowCheck = 0)
+  {
+    rowCheck = 5
+  }
+
+  console.log("Row target: " + rowTreas + ", Col target: " + colTreas)
+
+  if(colCheck == colTreas && rowCheck > rowTreas)
+  {
+    helpOut.innerHTML = "Up"
+  }
+  else if(colCheck == colTreas && rowCheck < rowTreas)
+  {
+    helpOut.innerHTML = "Down"
+  }
+  else if(rowCheck == rowTreas && colCheck > colTreas)
+  {
+    helpOut.innerHTML = "Left"
+  }
+  else if(rowCheck == rowTreas && colCheck < colTreas)
+  {
+    helpOut.innerHTML = "Right"
+  }
+  else
+  {
+    helpOut.innerHTML = "Sorry, no help available"
+  }
+
+  //why do they gain more points for asking for help?
+  score += 2
+  scoreOut.innerHTML = "Score: " + score
+
+}
 </script>
 
 
