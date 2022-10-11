@@ -20,33 +20,47 @@
   <div id="yourTime">Your time: </div>
   <div id="count">Count: </div>
 
-  <button type="button" class="btn btn-primary" onclick="timer()">Start Timer</button>
+  <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
 
-  <button type="button" class="btn btn-secondary" onclick="react()">React</button>
+  <button type="button" class="btn btn-secondary" onclick="recordReact()">React</button>
   
   <!-- <p id="target">I will become red </p> -->
   
   <script> 
-  var myTime
   var countOut = document.getElementById("count")
   var yourTimeOut = document.getElementById("yourTime")
 
-  function timer()
+  let myTime = undefined
+  let buttonTime = undefined
+  let elapsedTime = undefined
+
+  function startTime()
   {
+    myTime = undefined //reset timer for multiple uses
     for(let i=0;i<4;i++)
     {
       setTimeout(() => {
-        countOut.innerHTML = "Count: " + i;
-        //console.log("Count: " + i);
+        countOut.innerHTML = "Count: " + i
+        //console.log("Count: " + i)
       }, 
-        ((4-i)*1000)
+        ((3-i)*1000)
       );
       
     }
+    setTimeout(function() {
+      if (myTime === undefined) {
+        yourTimeOut.innerHTML = "Too Slow"
+      } else {
+        buttonTime = Date.now()
+        elapsedTime = -(myTime - buttonTime)
+        yourTimeOut.innerHTML = "Time was " + elapsedTime + "ms"
+      }
+    }, 3*1000)
+
 
   }
 
-  function react()
+  function recordReact()
   {
     myTime = Date.now()
     console.log("Start time: " + myTime)
