@@ -28,9 +28,21 @@
   
   <script> 
   var myTime
+  var countOut = document.getElementById("count")
+  var yourTimeOut = document.getElementById("yourTime")
 
   function timer()
   {
+    for(let i=0;i<4;i++)
+    {
+      setTimeout(() => {
+        countOut.innerHTML = "Count: " + i;
+        //console.log("Count: " + i);
+      }, 
+        ((4-i)*1000)
+      );
+      
+    }
 
   }
 
