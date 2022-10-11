@@ -26,14 +26,15 @@
 <body>
 	<h2>Gabriel SH Builds A Cycler</h2>
 		<div class="flex-container" id="target">
-		  <div>row item 1</div>   
+		  <div class="cycler">row item 1</div>   
 		  <div>row item 2</div>  
 		  <div>row item 3</div>  
 		</div>
 	
-	<p> Press the button to create an new element of type div and then add it to the container.
-		</p>
-		<button onclick="makeNewDiv()">Add one</button>
+	<p> Press the button to create an new element of type div and then add it to the container.</p>
+	<label for="input">Add value:</label>
+	<input type="text" id="input">
+	<button onclick="makeNewDiv()">Add one</button>
 	
 
 	<div><a href="treasure.html">Treasure</a></div>
@@ -43,11 +44,14 @@
 	
 </body>
 <script>
+		let valueIn = document.getElementById("input")
 	function makeNewDiv(){
 		/* make the div and its text */
 		let element = document.createElement("div")
-		element.innerHTML = "an item after 3"
+		let data = valueIn.value
+		element.innerHTML = data
 		element.style.color = "orange"
+		element.class="cycler"
 
 		/* add it to the container */
 		let container = document.getElementById('target')
